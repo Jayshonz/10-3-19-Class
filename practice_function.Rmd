@@ -1,0 +1,28 @@
+---
+title: "10-3-19 Function Class"
+author: "Jakeschonberger"
+date: "10/3/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(png)
+library(gganimate)
+library(janitor)
+library(googlesheets4)
+library(tidyverse)
+```
+
+```{r coldcall, message = FALSE, warning = FALSE}
+
+cold_call <- function() {
+
+sheets_deauth()
+x <- read_sheet("1LtupNx8yBeJzK6UyGkZ5u-aUAPzU90K9C4r2RTJwWqg")
+num <- nrow(x)
+rand <- runif(1, min=0, max=num)
+x[rand,1]
+}
+```
